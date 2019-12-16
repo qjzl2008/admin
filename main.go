@@ -169,7 +169,7 @@ func (a *Admin) database(driver, source string) error {
 	switch driver {
 	case "postgres":
 		a.dialect = db.PostgresDialect{}
-	case "sqlite3", "mysql":
+	case "sqlite3", "mysql", "mysql2":
 		a.dialect = db.BaseDialect{}
 	default:
 		return errors.New(fmt.Sprintf("Unknown database driver %v", driver))
